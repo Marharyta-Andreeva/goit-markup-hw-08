@@ -1,0 +1,184 @@
+.modal {
+    width: 528px;
+    min-height: 581px;
+    padding: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: transform var(--transition-options);
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.modal__btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal__icon {
+    fill: #000000;
+    transition: fill var(--transition-options);
+    .modal__btn:hover &,
+    .modal__btn:focus & {
+            fill: var(--accent-color);
+        }
+}
+
+.modal__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+    margin-bottom: 12px;
+}
+
+.form__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+}
+
+.form__box {
+    position: relative;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.form__comment {
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.form__icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill var(--transition-options);
+    .form__input:focus + & {
+            fill: var(--accent-color);
+        }
+}
+
+.form__input {
+    padding-left: 42px;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color var(--transition-options);
+    &:focus {
+         border-color: var(--accent-color);
+    }
+}
+
+.form__textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 12px 16px;
+    transition: border-color var(--transition-options);
+    &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.01em;
+            color: rgba(117, 117, 117, 0.5);
+        }
+    &:focus {
+        border-color: var(--accent-color);
+    }
+}
+
+.privacy__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    display: flex;
+    align-items: center;
+}
+
+.privacy__link {
+    color: var(--accent-color);
+    text-decoration: underline;
+    margin-left: 3px;
+}
+
+.privacy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.privacy__icon {
+    fill: transparent;
+    .privacy__checkbox:checked+.privacy__text & {
+            fill: var(--hero-color)
+        }
+}
+
+.privacy__text span {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--main-text-color);
+    border-radius: 3px;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .privacy__checkbox:checked+ & {
+            background-color: var(--accent-color);
+            border: none;
+        }
+}
+
+.form__btn {
+    position: absolute;
+    left: 164px;
+    bottom: 40px;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--hero-color);
+    background-color: var(--accent-color);
+    padding: 10px 55px 10px 56px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-options);
+    &:hover {
+            background-color: var(--btn-hover-color);
+        }
+}
