@@ -1,26 +1,10 @@
 .clients__list {
     margin-bottom: -30px;
-        @include mobile {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin-left: -30px;
-        }
-        @include tablet {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin-left: -30px;
-        }
-        @include desktop {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin-left: -30px;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px;
 }
 
 .clients__item {
@@ -28,9 +12,7 @@
     & + & {
         margin-left: 30px;
     }
-    @include tablet {
-        width: calc(100% /2 - 30px);
-    }
+    width: calc(100% /2 - 30px);
     @include tablet {
         width: calc(100% /3 - 30px);
     }    
@@ -40,8 +22,8 @@
 }
 
 .clients__link {
-    width: 210px;
-    height: 92px;
+    // width: 170px;
+    // height: 92px;
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;

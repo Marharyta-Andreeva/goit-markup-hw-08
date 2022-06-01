@@ -408,6 +408,17 @@ body {
 .header {
   border-bottom: 1px solid #ECECEC;
 }
+@media screen and (min-width: 768px) {
+  .header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .header .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -419,7 +430,15 @@ body {
 }
 
 .header__logo {
-  margin-right: 93px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 93px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .main-nav {
@@ -435,22 +454,116 @@ body {
 }
 
 .main-nav__list {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .main-nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.main-nav__open-btn {
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .main-nav__open-btn {
+    display: none;
+  }
+}
+
+.main-nav__icon {
+  fill: #000000;
+  -webkit-transition: fill var(--transition-options);
+  transition: fill var(--transition-options);
+}
+.main-nav__open-btn:hover .main-nav__icon, .main-nav__open-btn:focus .main-nav__icon {
+  fill: var(--accent-color);
+}
+@media screen and (min-width: 768px) {
+  .main-nav__icon {
+    display: none;
+  }
+}
+
+.mob__menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.mob__menu .container {
+  display: block;
+}
+
+.menu__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.mob__icon-close {
+  fill: #000000;
+  -webkit-transition: fill var(--transition-options);
+  transition: fill var(--transition-options);
+}
+.menu__close-btn:hover .mob__icon-close, .menu__close-btn:focus .mob__icon-close {
+  fill: var(--accent-color);
 }
 
 .contact__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: auto;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .contact__list {
+    display: inline;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
-.contact__item + .contact__item {
-  margin-left: 50px;
+@media screen and (min-width: 768px) {
+  .contact__item + .contact__item {
+    margin-top: 10px;
+  }
 }
-
+@media screen and (min-width: 1200px) {
+  .contact__item + .contact__item {
+    margin-left: 50px;
+  }
+}
 .main-nav__link {
   position: relative;
   font-weight: 500;
@@ -467,22 +580,24 @@ body {
   color: var(--accent-color);
 }
 
-.present::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-color);
+@media screen and (min-width: 768px) {
+  .present::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+  }
 }
-
 .contact__mail,
 .contact__tel {
   font-weight: 500;
-  line-height: 1.14;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   display: -webkit-box;
@@ -491,8 +606,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
   -webkit-transition: color var(--transition-options);
   transition: color var(--transition-options);
 }
@@ -502,6 +615,15 @@ body {
 .contact__tel:hover,
 .contact__tel:focus {
   color: var(--accent-color);
+}
+@media screen and (min-width: 1200px) {
+  .contact__mail,
+.contact__tel {
+    font-size: 14px;
+    line-height: 1.14;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 .contact__mail-icon {
@@ -866,66 +988,26 @@ soc__item + soc__item {
 
 .clients__list {
   margin-bottom: -30px;
-}
-@media screen and (min-width: 480px) {
-  .clients__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: -30px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .clients__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: -30px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .clients__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-left: -30px;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: -30px;
 }
 
 .clients__item {
   margin-bottom: 30px;
+  width: calc(50% - 30px);
 }
 .clients__item + .clients__item {
   margin-left: 30px;
-}
-@media screen and (min-width: 768px) {
-  .clients__item {
-    width: calc(50% - 30px);
-  }
 }
 @media screen and (min-width: 768px) {
   .clients__item {
@@ -939,8 +1021,6 @@ soc__item + soc__item {
 }
 
 .clients__link {
-  width: 210px;
-  height: 92px;
   border: 1px solid #AFB1B8;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
