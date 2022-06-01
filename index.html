@@ -44,11 +44,11 @@
                         </svg>+38 096 111 11 11</a></li>
             </ul>
         </div>
-        <div class="mob__menu">
+        <div class="mob__menu is-hidden">
             <div class="container">
             <button type="button" class="menu__close-btn">
                 <svg class="mob__icon-close" width="40" height="40">
-                    <use href="./images/icons.svg#icon-close-btn"></use>
+                    <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
             <ul class="mob-menu__list list">
@@ -56,6 +56,7 @@
                 <li class="mob-menu__item"><a href="portfolio.html" class="mob-menu__link link">Портфолио</a></li>
                 <li class="mob-menu__item"><a href="" class="mob-menu__link link">Контакты</a></li>
             </ul>
+            <div class="mob-contact__box">
             <ul class="mob-contact__list list">
                 <li class="mob-contact__item"><a href="tel:+380961111111" class="mob-contact__tel link">
                         +38 096 111 11 11</a></li>
@@ -68,6 +69,7 @@
                 <li class="mob-soc__item"><a href="" class="mob-soc__link link">Facebook</a></li>
                 <li class="mob-soc__item"><a href="" class="mob-soc__link link">LinkedIn</a></li>
             </ul>
+            </div>
             </div>
         </div>
     </header>
@@ -358,7 +360,7 @@
                         ./images/img-7-mob.jpg    1x,
                         ./images/img-7-mob-2x.jpg 2x
                         "
-                        media="(max-width:480px)"
+                        media="(max-width:768px)"
                         >
                     <img src="./images/img-7-mob.jpg" 
                     alt="Михаил Ермаков"
@@ -434,8 +436,9 @@
         </section>
     </main>
     
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="container">
+        <div class="contact-network__box">
         <div class="contacts footer__contacts">
         <a href="" class="logo footer__logo link"><span class="accent">Web</span>Studio</a>
         <address>
@@ -472,6 +475,7 @@
                 </a></li>
             </ul>
         </div>
+        </div>
         <div class="subscription">
             <h3 class="footer__title">Подпишитесь на рассылку</h3>
             <form class="mailing">
@@ -485,7 +489,7 @@
             </form>
         </div>
         </div>
-    </footer> -->
+    </footer>
 
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
@@ -542,6 +546,7 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>
