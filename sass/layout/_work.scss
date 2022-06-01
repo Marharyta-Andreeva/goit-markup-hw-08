@@ -1,4 +1,8 @@
 .work {
+    display: none;
+    @include desktop {
+        display: flex;
+    }
     padding-top: 0;
     &__item + &__item {
             margin-left: 30px;
