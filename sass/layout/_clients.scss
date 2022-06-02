@@ -28,23 +28,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: border var(--transition-options);
-    & :hover,
-    & :focus {
+    @include mobile {
+            width: 210px;
+            height: 92px;
+        }
+    
+        @include tablet {
+            width: 226px;
+            height: 92px;
+        }
+    
+        @include desktop {
+            width: 170px;
+            height: 92px;
+        }
+    &:hover,
+    &:focus {
             border: 1px solid var(--accent-color);
         }
-    @include mobile {
-        width: 210px;
-        height: 92px;
-    }
-    @include tablet {
-        width: 226px;
-        height: 92px;
-    }
-    @include desktop {
-        width: 170px;
-        height: 92px;
-    }
+    transition: border var(--transition-options);
 }
 
 .clients__icon {
