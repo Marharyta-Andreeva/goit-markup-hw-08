@@ -1,12 +1,5 @@
 .header {
     border-bottom: 1px solid #ECECEC;
-    @include tablet {
-        .container {
-            display: flex;
-            justify-items: center;
-            align-items: center;
-        }
-    }
     .container {
             display: flex;
             justify-items: center;
@@ -43,7 +36,9 @@
 }
 
 .main-nav__open-btn {
-    margin-left: auto;
+    display: block;
+    position: absolute;
+    right: 0;
     width: 44px;
     height: 44px;
     background-color: transparent;
@@ -105,12 +100,15 @@
 }
 
 .mob-menu__list {
-    padding-left: 40px;
+    padding-left: 15px;
+    @include mobile {
+        padding-left: 40px;
+    }
 }
 
 .mob-menu__link {
     font-weight: 500;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1.18;
     letter-spacing: 0.02em;
     color: var(--main-text-color);
@@ -118,7 +116,10 @@
     &:hover,
     &:focus {
             color: var(--accent-color);
-        }   
+        }
+    @include mobile {
+        font-size: 40px;
+    }  
 }
 
 .mob-menu__item + .mob-menu__item {
@@ -126,9 +127,12 @@
 }
 
 .mob-contact__box {
-    padding-left: 40px;
+    padding-left: 15px;
     position: absolute;
     bottom: 40px;
+    @include mobile {
+        padding-left: 40px;
+    }
 }
 
 .mob-soc__list {
@@ -142,20 +146,13 @@
 .mob-soc__link {
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 13px;
     line-height: 1.22;
     letter-spacing: 0.02em;
     color: var(--accent-color);
-}
-
-.mob-soc__link::before::not(:first-child) {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 22px;
-    height: 0;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    transform: rotate(90deg);
+    @include mobile {
+        font-size: 18px;
+    }
 }
 
 .mob-contact__list {
@@ -169,19 +166,25 @@
 .mob-contact__tel {
     font-style: normal;
     font-weight: 500;
-    font-size: 34px;
+    font-size: 29px;
     line-height: 1.18;    
     letter-spacing: 0.02em;
     color: var(--accent-color);
+    @include mobile {
+        font-size: 34px;
+    }
 }
 
 .mob-contact__mail {
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 19px;
     line-height: 1/17;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    @include mobile {
+        font-size: 24px;
+    }
 }
 
 .contact__list {

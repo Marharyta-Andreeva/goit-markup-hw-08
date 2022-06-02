@@ -31,10 +31,13 @@
 }
 
 .about__item {
-    max-width: 450px;
+    max-width: 290px;
     &:not(:last-child) {
             margin-bottom: 30px;
         }
+    @include mobile {
+        max-width: 450px;
+    }
     @include tablet {
         width: calc(100% /2 - 30px);
         margin-left: 30px;
