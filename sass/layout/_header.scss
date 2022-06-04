@@ -4,6 +4,9 @@
             display: flex;
             justify-items: center;
             align-items: center;
+            @include desktop {
+                align-items: baseline;
+            }
         }
 }
 
@@ -39,10 +42,10 @@
     display: block;
     position: absolute;
     right: 0;
-    width: 44px;
+    width: 60px;
     height: 44px;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: none;
     cursor: pointer;
     @include tablet {
         display: none;
@@ -68,11 +71,14 @@
     left: 0;
     background-color: #fff;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     padding-top: 48px;
     padding-bottom: 48px;
     .container {
         display: block;
+    }
+    @include tablet {
+        display: none;
     }
 }
 
@@ -139,8 +145,24 @@
     display: flex;
 }
 
-.mob-soc__item + .mob-soc__item {
-    margin-left: 20px;
+.mob-soc__item {
+    position: relative;
+    & + & {
+        margin-left: 20px;
+    }
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 1px;
+        transform: rotate(90deg);
+        background-color: rgba(33, 33, 33, 0.2);
+        top: 8px;
+        @include mobile {
+            width: 22px;
+            top: 10px;
+        }
+    }
 }
 
 .mob-soc__link {
@@ -261,8 +283,6 @@
     @include desktop {
         font-size: 14px;
         line-height: 1.14;
-        // padding-top: 32px;
-        // padding-bottom: 32px;
     }
 }
 

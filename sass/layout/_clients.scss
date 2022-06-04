@@ -1,19 +1,16 @@
 .clients__list {
-    @include mobile {
-        margin-bottom: -30px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-left: -30px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30px;
+    margin-bottom: -30px;
 }
 
 .clients__item {
+    margin-left: 30px;
     margin-bottom: 30px;
-    @include mobile {
-        width: calc(100% /2 - 30px);
-    }
+    display: block;
     @include tablet {
         width: calc(100% /3 - 30px);
     }    
@@ -23,8 +20,8 @@
 }
 
 .clients__link {
-    width: 210px;
-    height: 92px;
+    width: 130px;
+    height: 70px;
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
@@ -36,6 +33,11 @@
             border: 1px solid var(--accent-color);
         }
     transition: border var(--transition-options);
+    
+    @include mobile {
+        width: 210px;
+        height: 92px;
+    }
     @include tablet {
         width: 226px;
         height: 92px;

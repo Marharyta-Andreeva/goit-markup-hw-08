@@ -1,15 +1,23 @@
 .portfolio__list {
-    margin-bottom: 50px;
-    justify-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-bottom: -15px;
+    margin-bottom: 40px;
     @include tablet {
-        display: flex;
         justify-content: center;
+        margin-bottom: 50px;
     }
 }
 
 .portfolio__item {
-    &:not(:last-child) {
+    margin-left: 8px;
+    margin-bottom: 15px;
+    display: block;
+    @include tablet {
+        &:not(:last-child) {
         margin-right: 8px;
+       }
     }
 }
 
@@ -17,9 +25,9 @@
     font-family: inherit;
     border: 1px solid transparent;
     border-radius: 4px;
-    padding: 6px 22px;
+    padding: 6px 10px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.62;
     text-align: center;
     letter-spacing: 0.03em;
@@ -36,6 +44,10 @@
                 0px 1px 2px rgba(0, 0, 0, 0.08),
                 0px 2px 2px rgba(0, 0, 0, 0.12);
         }
+    @include mobile {
+        padding: 6px 22px;
+        font-size: 16px;
+    }
 }
 
 .projects__list {
@@ -48,24 +60,18 @@
 }
 
 .projects__item {
-    max-width: 290px;
     margin-bottom: 30px;
     border-bottom: 1px solid #eeeeee;
     border-right: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
     display: block;
     transition: box-shadow var(--transition-options);
-    @include mobile {
-        max-width: 450px;
-    }
     @include tablet {
         width: calc(100% / 2 - 30px);
-        max-width: 354px;
         margin-left: 30px;
     }
     @include desktop {
         width: calc(100% / 3 - 30px);
-        max-width: 370px;
         margin-left: 30px;
     }
     &:hover,
@@ -81,19 +87,6 @@
     overflow: hidden;
 }
 
-.card__img {
-    width: 290px;
-    @include mobile {
-        width: 450px;
-    }
-    @include tablet {
-        width: 354px;
-    }
-    @include desktop {
-        width: 370px;
-    }
-}
-
 .card__info {
     font-weight: 400;
     font-size: 13px;
@@ -103,7 +96,8 @@
     position: absolute;
     top: 0;
     background-color: rgba(33, 150, 243, 0.9);
-    padding: 35px 24px;
+    height: 100%;
+    padding: 47px 24px;
     transform: translateY(100%);
     transition: transform var(--transition-options);
     .projects__item:hover & {

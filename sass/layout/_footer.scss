@@ -20,12 +20,7 @@
     align-items: baseline;
     @include tablet {
         display: flex;
-        padding-left: 76px;
-        padding-right: 89px;
-    }
-    @include desktop {
-        padding-right: 0;
-        padding-left: 0;
+        justify-content: space-around;
     }
 }
 
@@ -38,6 +33,7 @@
     margin-bottom: 60px;
     @include desktop {
         margin-right: 70px;
+        margin-bottom: 0;
     }
 }
 
@@ -71,10 +67,6 @@
 
 .footer__network {
     margin-bottom: 60px;
-    @include tablet {
-        margin-left: auto;
-        margin-bottom: 0;
-    }
     @include desktop {
         margin-right: 93px;
     }
@@ -144,6 +136,7 @@
     @include desktop {
         width: 358px;
         margin-right: 12px;
+        margin-bottom: 0;
     }
 }
 
